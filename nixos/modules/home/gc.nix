@@ -4,6 +4,6 @@
     automatic = true;
     # Change how often the garbage collector runs (default: weekly)
     #frequency = "weekly";
-    options = " --delete-older-than 5";
+    options = " --delete-older-than 5d";
   };
 }
