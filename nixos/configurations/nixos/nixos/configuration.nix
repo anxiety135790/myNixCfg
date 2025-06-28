@@ -16,16 +16,16 @@
   boot.supportedFilesystems = [ "ntfs" ];
   
  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [
-    "https://mirrors.cernet.edu.cn/nix-channels/store" "https://cache.nixos.org"
-  ];
+  #nix.settings.substituters = [
+   # "https://mirrors.cernet.edu.cn/nix-channels/store" "https://cache.nixos.org"
+ # ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
-   networking.proxy.default = "http://127.0.0.1:7890";#"http://user:password@proxy:port/";
-   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+   #networking.proxy.default = "http://127.0.0.1:7890";#"http://user:password@proxy:port/";
+   #networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   
   #fileSystems."/mnt/sdc" = {
   #  device = "/dev/nvme0n1p1";

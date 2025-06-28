@@ -6,9 +6,12 @@
     flake.inputs.self.nixosModules.common
   ];
     
-  nix.settings.substituters = [
-    "https://mirrors.cernet.edu.cn/nix-channels/store" "https://cache.nixos.org"
-  ];
+  nix.settings.substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" "https://cache.nixos.org" ];
+ 
+  
+  # Configure network proxy if necessary
+   networking.proxy.default = "http://127.0.0.1:7890";#"http://user:password@proxy:port/";
+   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   
   #
   #install ibus-rime
@@ -23,6 +26,7 @@
   #services.system76-scheduler.enable = true;
   #hardware.system76.power-daemon.enable = true;
 
+  # tlp conflict with power-profile
   services.power-profiles-daemon.enable  = false;
   services.tlp = {
     enable = true;
@@ -34,7 +38,7 @@
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
       CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 80;
+      CPU_MAX_PERF_ON_AC = 60;
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
 
@@ -65,9 +69,16 @@
      github-desktop
      git-lfs
      git-lfs-transfer
-     
+     tailscale-systray
+     parsec-bin
+     xsel
+     xclip
+     wl-clipboard
+     gnomeExtensions.tailscale-qs
      
     ];
+
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -148,7 +159,24 @@
   ##end of vmware 
   
   # 
+  #
+  services.xserver.displayManager.lightdm.greeters.gtk = {
+    enable = true;
+    cursorTheme.package = [
+      "google_cursor"
+    ];
+    cursorTheme.name = "GoogleDot-blue";
+    cursorTheme.size = 16;
+  };
  
+  services.tailscale = {
+    enable = true;
+    #useRoutingFeatures = "both";
+  };
+  
+  services.teamviewer = {
+    enable = true;
+  };
 
 
  

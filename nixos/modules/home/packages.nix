@@ -40,7 +40,7 @@
       enable = true;
       #host = ""; #In case you wish to use a server other than tmate.io 
     };
-  };
+  }; 
   
- 
+  #
 }
