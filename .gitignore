@@ -1,0 +1,17 @@
+# Nix build results
+result*
+
+# Direnv cache
+/.direnv/
+
+# Common editor directories
+.vscode/
+.idea/
+
+# macOS specific files
+.DS_Store
+
+# Files containing secrets (add your own)
+secrets.nix
+*.env
+nixos/modules/nixos/src/VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
