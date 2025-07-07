@@ -10,7 +10,7 @@
     displayManager.sddm.enable = true;
     #displayManager.sddm.wayland.enable = false;
     desktopManager.plasma6.enable = true;
-    #displayManager.defaultSession = "plasma";
-    displayManager.defaultSession = "plasmax11";
+    displayManager.defaultSession = "plasma";
+    #displayManager.defaultSession = "plasmax11";
   };
 }

@@ -6,6 +6,7 @@
     flake.inputs.self.nixosModules.common
     ./services/services.nix
     ./packages/packages.nix
+    ./packages/vmware/vmware.nix
   ];
     
 
