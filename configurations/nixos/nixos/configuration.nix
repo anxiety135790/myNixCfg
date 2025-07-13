@@ -84,7 +84,7 @@
   users.users.anxiety135790 = {
     isNormalUser = true;
     description = "Skyler Archer";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [
 
       kdePackages.kate
@@ -122,6 +122,7 @@
   #   enableSSHSupport = true;
   # };
 
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -140,5 +141,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-  
+
 }

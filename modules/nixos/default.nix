@@ -23,24 +23,43 @@
   #install ibus-rime
   i18n.inputMethod = {
     enable = true;
-    type = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [rime libpinyin pinyin];
-   };
-   
+    #type = "ibus";
+    #ibus.engines = with pkgs.ibus-engines; [rime libpinyin pinyin];
+    #ibus.panel = "${pkgs.plasma5Packages.plasma-desktop}/libexec/kimpanel-ibus-panel" ;
+    type = "fcitx5";
+    
+    # 2. Add Rime and other essential addons
+    fcitx5.addons = with pkgs; [
+    fcitx5-rime          # The Rime engine
+    fcitx5-gtk           # For GTK4/GTK3/GTK2 applications
+    #fcitx5-qt            # For Qt6/Qt5 applications
+    fcitx5-configtool    # GUI tool to configure Fcitx5
+    # Add any other fcitx5 addons you might need here
+    ];
+  }; 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   
 
-   environment.variables = {
-     GTK_IM_MODULE = "ibus";
-     QT_IM_MODULE = "ibus";
-     XMODIFIERS = "@im=ibus";
-   };
+   #environment.variables = {
+     #GTK_IM_MODULE = "ibus";
+     #QT_IM_MODULE = "ibus";
+     #unset QT_IM_MODULE;
+     #unset GTK_IM_MODULE;
+    
+     #XMODIFIERS = "@im=ibus";
+     #vulkan-loader
+   #};
+
+    #environment.sessionVariables = {
+    #QT_IM_MODULE = lib.mkForce ""; # Or lib.mkForce null;
+    #GTK_IM_MODULE = lib.mkForce ""; # Or lib.mkForce null;
+  #};
   
 
   
 
-  qt.platformTheme = "kde6";
+  #qt.platformTheme = "kde6";
   
   # services.xserver.desktopManager.xterm.enable = false;
 

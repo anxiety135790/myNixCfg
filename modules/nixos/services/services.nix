@@ -3,6 +3,8 @@
  
  {
 
+  services.xserver.enable = true; # to enable the xorg server
+  services.xserver.videoDrivers = [ "amdgpu" ]; # to load the amdgpu kernel module
   
   #
   services.openssh.enable = true;
@@ -55,9 +57,9 @@
 
 
 
-  services.xserver.displayManager.sessionCommands = ''
-  ${pkgs.ibus}/bin/ibus-daemon -drx &
-  '';
+  #services.xserver.displayManager.sessionCommands = ''
+  #${pkgs.ibus}/bin/ibus-daemon -drx &
+  #'';
 
   services.xserver.displayManager.lightdm.greeters.gtk = {
     enable = true;
