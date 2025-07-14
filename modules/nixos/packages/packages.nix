@@ -25,21 +25,16 @@
      catppuccin-kde
      vscode
      #vscodium
-     rime-ls
-     rime-ice
+     #tlp-gui
      gemini-cli
-     rime-data            # Core Rime data
-     librime              # The Rime library itself
-     # Example: Add a specific schema like luna-pinyin
-    #  (rime-prelude.override {
-    #     extraSchemas = with pkgs.rime-schemas; [
-    #       rime-luna-pinyin
-    #       rime-terra-pinyin
-    #       rime-stroke
-    #       # Find more in nixpkgs search for "rime-schemas"
-    #     ];
-    #   })
-     
+
+
+     #fcitx5-rime
+     #rime-ls
+     #rime-ice
+     #rime-data            # Core Rime data
+     #librime              # The Rime library itself
+ 
     ];
 
 
@@ -68,6 +63,7 @@
     #file-roller # archive manager
     geary       # email client
     seahorse    # password manager
+ 
 
     # these should be self explanatory
     #gnome-calculator 
