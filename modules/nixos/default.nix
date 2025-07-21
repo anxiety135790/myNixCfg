@@ -7,6 +7,7 @@
     ./services/services.nix
     ./packages/packages.nix
     ./packages/vmware/vmware.nix
+    #./packages/tlpui/tlpui.nix
   ];
     
 
@@ -43,9 +44,18 @@
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
+
   
-   environment.variables = {
-    RIME_USER_DIR = "/home/anxiety135790/nixos/modules/packages/rime/";
+  environment = { 
+    variables = {
+      RIME_USER_DIR = "~/nixos/modules/packages/rime/config";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
+    };
+ 
+    
   };
+
   
 }

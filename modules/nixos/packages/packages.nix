@@ -28,13 +28,17 @@
      #tlp-gui
      gemini-cli
 
+     qt6.full
+     qtcreator
+     gcc
+     cmake
+     gdb
+     pkg-config
+     python3
 
-     #fcitx5-rime
-     #rime-ls
-     #rime-ice
-     #rime-data            # Core Rime data
-     #librime              # The Rime library itself
- 
+     #umu-launcher
+     android-tools
+
     ];
 
 
@@ -103,5 +107,8 @@
    hardware.graphics.extraPackages32 = with pkgs.driversi686Linux; [
      amdvlk
    ];
+   
+     
+
 
 }
