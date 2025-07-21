@@ -4,11 +4,10 @@
 {
   imports = [
     flake.inputs.self.nixosModules.common
-    ./services/services.nix
-    ./packages/packages.nix
-    ./packages/vmware/vmware.nix
-    #./packages/tlpui/tlpui.nix
-  ];
+    ./pkgsandsvc/packages.nix
+    ./pkgsandsvc/services.nix
+
+ ];
     
 
 
@@ -22,7 +21,8 @@
   # Configure network proxy if necessary
    networking.proxy.default = "http://127.0.0.1:7890"; #"http://user:password@proxy:port/";
    networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  
+      
+
   #
   #install ibus-rime
   i18n.inputMethod = {
@@ -46,11 +46,13 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
+  networking.firewall.allowedTCPPorts = [ 7890 7891 ];
+  networking.firewall.allowedUDPPorts = [ 7890 7891 ];
 
   
   environment = { 
     variables = {
-      RIME_USER_DIR = "~/nixos/modules/packages/rime/config";
+      RIME_USER_DIR = "${flake.inputs.self}/modules/nixos/src/rime/config";
       QT_QPA_PLATFORMTHEME = "qt6ct";
     };
  

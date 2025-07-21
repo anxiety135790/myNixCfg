@@ -18,22 +18,6 @@ in
 
   home.stateVersion = "25.05";
   
-  # Gaming packages
-  home.packages = with pkgs; [
-   lutris
-   winetricks
-   (wineWowPackages.stable.override { })
-   gamemode
-   mangohud
-   vkbasalt
-   steam
-   protonup-qt
-  ];
- 
-  #programs.gamemode.enable = true;
-  #programs.steam = {
-  #  enable = true;
-  #  remotePlay.openFirewall = true;
-  #  dedicatedServer.openFirewall = true;
-  #};
+
+
 }

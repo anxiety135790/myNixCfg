@@ -23,7 +23,7 @@
   services.mihomo = {
     enable = true;
     tunMode = true;
-    configFile = ../packages/mihomo/config.yaml;
+    configFile = ./src/mihomo/config.yaml;
   }; 
 
   # razer mouse 
