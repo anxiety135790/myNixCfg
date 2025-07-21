@@ -4,8 +4,8 @@
 {
   imports = [
     flake.inputs.self.nixosModules.common
-    ./pkgsandsvc/packages.nix
-    ./pkgsandsvc/services.nix
+    ./packages.nix
+    ./services.nix
 
  ];
     
