@@ -1,8 +1,9 @@
-{ pkgs,libs, ... }:
+{ inputs,pkgs,libs, ... }:
 {
-  # imports = [
+  imports = [
+    ./quickshell.nix
 
-  # ];
+  ];
 
   services.xserver.enable = true;
   services = {
@@ -60,17 +61,6 @@
     #elisa
   ];
 
-  environment.systemPackages = with pkgs; [
-      #  #Niri desktop environment
-    #  waybar # Status bar
-    #  wofi # Application launcher
-    #  mako # Notification daemon
-    #  swaybg # Wallpaper utility
-    #  swaylock # Screen locker
-    #  grim # Screenshot utility
-    #  slurp # For selecting a region for grim
-    #  wdisplays # GUI for display management
-    #  catppuccin-kde
-  ];
+
 
 }

@@ -18,6 +18,8 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
 
+    #quickshell.url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+    #quickshell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Wired using https://nixos-unified.org/autowiring.html

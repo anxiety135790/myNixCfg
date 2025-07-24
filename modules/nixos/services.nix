@@ -19,6 +19,8 @@
     enable = true;
   };
 
+  qt.enable = true;
+
 
   services.mihomo = {
     enable = true;
