@@ -18,7 +18,11 @@
 
 
   #Niri deskop settings 
-  programs.niri.enable = true;
+  #programs.niri.enable = true;
+
+  programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
+
 
 
   environment.gnome.excludePackages = with pkgs; [
